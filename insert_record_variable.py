@@ -5,7 +5,7 @@ def insert_varibles_into_table(id, name, price, purchase_date):
     try: 
         conn = mydbconnection.connect(database='usersdb', user='root',password='root') 
         cursor = conn.cursor() 
-        mySql_insert_query = """INSERT INTO Laptop (Id, Name, Price, Purchase_date)VALUES (%s, %s, %s, %s) """
+        mySql_insert_query = """INSERT INTO Laptop (Id, Name, Price, Purchase_date) VALUES (%s, %s, %s, %s) """
         record = (id, name, price, purchase_date) 
         cursor.execute(mySql_insert_query, record) 
         conn.commit() 
